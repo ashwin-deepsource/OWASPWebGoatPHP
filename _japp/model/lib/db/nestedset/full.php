@@ -121,8 +121,7 @@ class FullNestedSet extends BaseNestedSet implements ExtendedNestedSet
      */
     function SiblingConditional($SiblingDistance=1,$ConditionString,$Rest=null)
     {
-        $Arguments=func_get_args();
-        $ConditionString=$ConditionString; //prevent warning
+        $Arguments=func_get_args(); //prevent warning
         array_shift($Arguments); //Rid $SiblingDistance
         $Parent=call_user_func_array(array($this,"ParentNodeConditional"),$Arguments);
         $Siblings=$this->Children($Parent[$this->ID()]);
